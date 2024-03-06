@@ -9,7 +9,15 @@ namespace Project
 
         private void bttnQuit_Click(object sender, EventArgs e)
         {
-            this.Close();
+            //ICA4
+            DialogResult SelectedButton;
+            SelectedButton = MessageBox.Show("Do you want to exit?",
+                "Exiting...",MessageBoxButtons.YesNo,MessageBoxIcon.Exclamation);
+            if (SelectedButton == DialogResult.Yes)
+            {
+                //Quits the program
+                this.Close();
+            }
         }
 
         private void bttnClear_Click(object sender, EventArgs e)
@@ -28,27 +36,29 @@ namespace Project
             double Deposit;
             double Current_Balance;
             double New_Balance;
+            //ICA 4
+            bool NDeposit;
+            bool CBalance;
 
             //input 
             CustomerName = txtCustomerName.Text;
-            Deposit = double.Parse(txtDepositAmount.Text);
-            Current_Balance = double.Parse(txtBalance.Text);
+            //Deposit = double.Parse(txtDepositAmount.Text);
+            NDeposit = double.TryParse(txtDepositAmount.Text, out Deposit);
+            //Current_Balance = double.Parse(txtBalance.Text);
+            CBalance = double.TryParse(txtBalance.Text, out Current_Balance);
+            if (NDeposit && CBalance) {
+                {
+                    //possible processing may change 
+                    New_Balance = Deposit + Current_Balance;
 
-            //possible processing may change 
-            New_Balance = Deposit + Current_Balance;
+                    //output
+                    LstOut.Items.Add("Your name is " + CustomerName);
+                    LstOut.Items.Add("Your current balance was " + Current_Balance.ToString("C"));
+                    LstOut.Items.Add("You have just put in " + Deposit.ToString("C"));
+                    LstOut.Items.Add("The new balance of your account is now " + New_Balance.ToString("C"));
 
-            //output
-            LstOut.Items.Add("Your name is " + CustomerName);
-            LstOut.Items.Add("Your current balance was " + Current_Balance.ToString("C")); 
-            LstOut.Items.Add("You have just put in " + Deposit.ToString("C"));
-            LstOut.Items.Add("The new balance of your account is now " + New_Balance.ToString("C"));
-
-
-
-
-
-
-        }
+                }
+  
         // non default event procedure
         private void txtCustomerName_Enter(object sender, EventArgs e)
         {
