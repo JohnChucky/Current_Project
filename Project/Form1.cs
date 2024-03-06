@@ -46,18 +46,19 @@ namespace Project
             NDeposit = double.TryParse(txtDepositAmount.Text, out Deposit);
             //Current_Balance = double.Parse(txtBalance.Text);
             CBalance = double.TryParse(txtBalance.Text, out Current_Balance);
-            if (NDeposit && CBalance) {
-                {
-                    //possible processing may change 
-                    New_Balance = Deposit + Current_Balance;
+            if (NDeposit && CBalance) { 
+            }
+            {
+                //possible processing may change 
+                New_Balance = Deposit + Current_Balance;
 
-                    //output
-                    LstOut.Items.Add("Your name is " + CustomerName);
-                    LstOut.Items.Add("Your current balance was " + Current_Balance.ToString("C"));
-                    LstOut.Items.Add("You have just put in " + Deposit.ToString("C"));
-                    LstOut.Items.Add("The new balance of your account is now " + New_Balance.ToString("C"));
+                //output
+                LstOut.Items.Add("Your name is " + CustomerName);
+                LstOut.Items.Add("Your current balance was " + Current_Balance.ToString("C"));
+                LstOut.Items.Add("You have just put in " + Deposit.ToString("C"));
+                LstOut.Items.Add("The new balance of your account is now " + New_Balance.ToString("C"));
 
-                }
+            } }
   
         // non default event procedure
         private void txtCustomerName_Enter(object sender, EventArgs e)
