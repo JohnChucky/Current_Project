@@ -1,3 +1,5 @@
+using System.Diagnostics.Eventing.Reader;
+
 namespace Project
 {
     public partial class DavidHar_Project_InClass : Form
@@ -46,9 +48,11 @@ namespace Project
             NDeposit = double.TryParse(txtDepositAmount.Text, out Deposit);
             //Current_Balance = double.Parse(txtBalance.Text);
             CBalance = double.TryParse(txtBalance.Text, out Current_Balance);
-            if (NDeposit && CBalance) { 
-            }
+            //ICA 5 Simple Version 
+            if (NDeposit && CBalance)
             {
+
+
                 //possible processing may change 
                 New_Balance = Deposit + Current_Balance;
 
@@ -58,7 +62,12 @@ namespace Project
                 LstOut.Items.Add("You have just put in " + Deposit.ToString("C"));
                 LstOut.Items.Add("The new balance of your account is now " + New_Balance.ToString("C"));
 
-            } }
+            }
+            else
+            {
+                LstOut.Items.Add("The price you entred is wrong");
+            }
+        }
   
         // non default event procedure
         private void txtCustomerName_Enter(object sender, EventArgs e)
