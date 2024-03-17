@@ -38,6 +38,11 @@
             btnQuit = new Button();
             LblCustName = new Label();
             txtCustomerName = new TextBox();
+            groupBox1 = new GroupBox();
+            radioButton1 = new RadioButton();
+            radioButton2 = new RadioButton();
+            radioButton3 = new RadioButton();
+            groupBox1.SuspendLayout();
             SuspendLayout();
             // 
             // LblDeposit
@@ -134,11 +139,57 @@
             txtCustomerName.Enter += txtCustomerName_Enter;
             txtCustomerName.Leave += txtCustomerName_Leave;
             // 
+            // groupBox1
+            // 
+            groupBox1.Controls.Add(radioButton3);
+            groupBox1.Controls.Add(radioButton2);
+            groupBox1.Controls.Add(radioButton1);
+            groupBox1.Location = new Point(357, 29);
+            groupBox1.Name = "groupBox1";
+            groupBox1.Size = new Size(436, 157);
+            groupBox1.TabIndex = 10;
+            groupBox1.TabStop = false;
+            groupBox1.Text = "groupBox1";
+            // 
+            // radioButton1
+            // 
+            radioButton1.AutoSize = true;
+            radioButton1.Location = new Point(3, 19);
+            radioButton1.Name = "radioButton1";
+            radioButton1.Size = new Size(94, 19);
+            radioButton1.TabIndex = 0;
+            radioButton1.TabStop = true;
+            radioButton1.Text = "radioButton1";
+            radioButton1.UseVisualStyleBackColor = true;
+            // 
+            // radioButton2
+            // 
+            radioButton2.AutoSize = true;
+            radioButton2.Location = new Point(173, 19);
+            radioButton2.Name = "radioButton2";
+            radioButton2.Size = new Size(94, 19);
+            radioButton2.TabIndex = 1;
+            radioButton2.TabStop = true;
+            radioButton2.Text = "radioButton2";
+            radioButton2.UseVisualStyleBackColor = true;
+            // 
+            // radioButton3
+            // 
+            radioButton3.AutoSize = true;
+            radioButton3.Location = new Point(337, 19);
+            radioButton3.Name = "radioButton3";
+            radioButton3.Size = new Size(94, 19);
+            radioButton3.TabIndex = 2;
+            radioButton3.TabStop = true;
+            radioButton3.Text = "radioButton3";
+            radioButton3.UseVisualStyleBackColor = true;
+            // 
             // DavidHar_Project_InClass
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
             ClientSize = new Size(800, 450);
+            Controls.Add(groupBox1);
             Controls.Add(txtCustomerName);
             Controls.Add(LblCustName);
             Controls.Add(btnQuit);
@@ -151,6 +202,8 @@
             Controls.Add(LblDeposit);
             Name = "DavidHar_Project_InClass";
             Text = "DavidHar_Project_InClass";
+            groupBox1.ResumeLayout(false);
+            groupBox1.PerformLayout();
             ResumeLayout(false);
             PerformLayout();
         }
@@ -167,5 +220,9 @@
         private Button btnQuit;
         private Label LblCustName;
         private TextBox txtCustomerName;
+        private GroupBox groupBox1;
+        private RadioButton radioButton3;
+        private RadioButton radioButton2;
+        private RadioButton radioButton1;
     }
 }

@@ -9,6 +9,11 @@ namespace Project
             InitializeComponent();
         }
 
+        string InerestCalculation;
+        string RdoDeposit;
+        string RdoWithdraw;
+        //For the buttons make it so that they are Interest, Deposit and withdraw buttons.
+
         private void bttnQuit_Click(object sender, EventArgs e)
         {
             //ICA4
@@ -49,9 +54,10 @@ namespace Project
             //Current_Balance = double.Parse(txtBalance.Text);
             CBalance = double.TryParse(txtBalance.Text, out Current_Balance);
             //ICA 5 Simple Version 
+            //Use switch to calculate new balance based on transaction type
             if (NDeposit && CBalance)
             {
-
+                //switch(Inerest)Give it a value
 
                 //possible processing may change 
                 New_Balance = Deposit + Current_Balance;
@@ -65,7 +71,7 @@ namespace Project
             }
             else
             {
-                LstOut.Items.Add("The price you entred is wrong");
+                LstOut.Items.Add("The price input is wrong");
             }
         }
   
