@@ -48,8 +48,13 @@
             rdo_Deposit_80 = new RadioButton();
             rdo_Deposit_40 = new RadioButton();
             rdo_Custom_Deposit = new RadioButton();
+            groupBox1 = new GroupBox();
+            radioButton3 = new RadioButton();
+            radioButton2 = new RadioButton();
+            Interest_Calculation = new RadioButton();
             Gbx_Bank_Tax.SuspendLayout();
             Gbx_Quick_Deposit.SuspendLayout();
+            groupBox1.SuspendLayout();
             SuspendLayout();
             // 
             // LblDeposit
@@ -268,11 +273,58 @@
             rdo_Custom_Deposit.UseVisualStyleBackColor = true;
             rdo_Custom_Deposit.CheckedChanged += rdo_Custom_Deposit_CheckedChanged;
             // 
+            // groupBox1
+            // 
+            groupBox1.Controls.Add(radioButton3);
+            groupBox1.Controls.Add(radioButton2);
+            groupBox1.Controls.Add(Interest_Calculation);
+            groupBox1.Location = new Point(354, 133);
+            groupBox1.Name = "groupBox1";
+            groupBox1.Size = new Size(433, 40);
+            groupBox1.TabIndex = 12;
+            groupBox1.TabStop = false;
+            groupBox1.Text = "Transaction Type";
+            // 
+            // radioButton3
+            // 
+            radioButton3.AutoSize = true;
+            radioButton3.Location = new Point(284, 15);
+            radioButton3.Name = "radioButton3";
+            radioButton3.Size = new Size(76, 19);
+            radioButton3.TabIndex = 2;
+            radioButton3.TabStop = true;
+            radioButton3.Text = "Withdraw";
+            radioButton3.UseVisualStyleBackColor = true;
+            // 
+            // radioButton2
+            // 
+            radioButton2.AutoSize = true;
+            radioButton2.Location = new Point(165, 15);
+            radioButton2.Name = "radioButton2";
+            radioButton2.Size = new Size(65, 19);
+            radioButton2.TabIndex = 1;
+            radioButton2.TabStop = true;
+            radioButton2.Text = "Deposit";
+            radioButton2.UseVisualStyleBackColor = true;
+            // 
+            // Interest_Calculation
+            // 
+            Interest_Calculation.AutoSize = true;
+            Interest_Calculation.Location = new Point(13, 15);
+            Interest_Calculation.Name = "Interest_Calculation";
+            Interest_Calculation.Size = new Size(127, 19);
+            Interest_Calculation.TabIndex = 0;
+            Interest_Calculation.TabStop = true;
+            Interest_Calculation.Text = "Interest Calculation";
+            Interest_Calculation.UseVisualStyleBackColor = true;
+            Interest_Calculation.CheckedChanged += Interest_Calculation_CheckedChanged;
+            // 
             // DavidHar_Project_InClass
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
             ClientSize = new Size(800, 450);
+            Controls.Add(groupBox1);
             Controls.Add(Gbx_Quick_Deposit);
             Controls.Add(Gbx_Bank_Tax);
             Controls.Add(txtCustomerName);
@@ -292,6 +344,8 @@
             Gbx_Bank_Tax.PerformLayout();
             Gbx_Quick_Deposit.ResumeLayout(false);
             Gbx_Quick_Deposit.PerformLayout();
+            groupBox1.ResumeLayout(false);
+            groupBox1.PerformLayout();
             ResumeLayout(false);
             PerformLayout();
         }
@@ -318,5 +372,9 @@
         private RadioButton rdo_Deposit_100;
         private RadioButton rdo_Deposit_300;
         private RadioButton rdo_Deposit_200;
+        private GroupBox groupBox1;
+        private RadioButton radioButton3;
+        private RadioButton radioButton2;
+        private RadioButton Interest_Calculation;
     }
 }

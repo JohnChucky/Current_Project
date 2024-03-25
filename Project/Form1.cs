@@ -12,8 +12,9 @@ namespace Project
         string InerestCalculation;
         string RdoDeposit;
         string RdoWithdraw;
-        double BankTax;
-        double Deposit_Amount;
+        string TransType;
+        //double BankTax;
+        //double Deposit_Amount;
         //For the buttons make it so that they are Interest, Deposit and withdraw buttons.
 
         private void bttnQuit_Click(object sender, EventArgs e)
@@ -122,7 +123,7 @@ namespace Project
         {
             if (rdoBankTaxHome.Checked)
             {
-                BankTax = 0;
+                //BankTax = 0;
             }
         }
 
@@ -130,7 +131,7 @@ namespace Project
         {
             if (rdoBankTaxForeign.Checked)
             {
-                BankTax = 3;
+                //BankTax = 3;
             }
         }
 
@@ -179,6 +180,15 @@ namespace Project
             if (rdo_Deposit_300.Checked)
             {
                 Deposit_Amount = 300;
+            }
+        }
+
+        private void Interest_Calculation_CheckedChanged(object sender, EventArgs e)
+        {
+            if (Interest_Calculation.Checked)
+            {
+                Interest_Rate = 2; // Add into the interest rate for later, like make it so that it adds on to the price for the inut
+                //and make sure that it is added on with new lines 
             }
         }
     }
