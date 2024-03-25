@@ -12,6 +12,8 @@ namespace Project
         string InerestCalculation;
         string RdoDeposit;
         string RdoWithdraw;
+        double BankTax;
+        double Deposit_Amount;
         //For the buttons make it so that they are Interest, Deposit and withdraw buttons.
 
         private void bttnQuit_Click(object sender, EventArgs e)
@@ -19,7 +21,7 @@ namespace Project
             //ICA4
             DialogResult SelectedButton;
             SelectedButton = MessageBox.Show("Do you want to exit?",
-                "Exiting...",MessageBoxButtons.YesNo,MessageBoxIcon.Exclamation);
+                "Exiting...", MessageBoxButtons.YesNo, MessageBoxIcon.Exclamation);
             if (SelectedButton == DialogResult.Yes)
             {
                 //Quits the program
@@ -60,7 +62,7 @@ namespace Project
                 //switch(Inerest)Give it a value
 
                 //possible processing may change 
-                New_Balance = Deposit + Current_Balance;
+                New_Balance = Deposit + Current_Balance - BankTax;
 
                 //output
                 LstOut.Items.Add("Your name is " + CustomerName);
@@ -74,7 +76,7 @@ namespace Project
                 LstOut.Items.Add("The price input is wrong");
             }
         }
-  
+
         // non default event procedure
         private void txtCustomerName_Enter(object sender, EventArgs e)
         {
@@ -108,6 +110,76 @@ namespace Project
         private void txtBalance_Leave(object sender, EventArgs e)
         {
             txtBalance.BackColor = SystemColors.Window;
+        }
+
+        private void DavidHar_Project_InClass_Load(object sender, EventArgs e)
+        {
+            rdoBankTaxHome.Checked = true;
+            rdo_Custom_Deposit.Checked = true;
+        }
+
+        private void rdoBankTaxHome_CheckedChanged(object sender, EventArgs e)
+        {
+            if (rdoBankTaxHome.Checked)
+            {
+                BankTax = 0;
+            }
+        }
+
+        private void rdoBankTaxForeign_CheckedChanged(object sender, EventArgs e)
+        {
+            if (rdoBankTaxForeign.Checked)
+            {
+                BankTax = 3;
+            }
+        }
+
+        private void rdo_Custom_Deposit_CheckedChanged(object sender, EventArgs e)
+        {
+            if (rdo_Custom_Deposit.Checked)
+            {
+                Deposit_Amount = 0;
+            }
+        }
+
+        private void rdo_Deposit_40_CheckedChanged(object sender, EventArgs e)
+        {
+            if (rdo_Deposit_40.Checked)
+            {
+                Deposit_Amount = 40;
+            }
+        }
+
+        private void rdo_Deposit_80_CheckedChanged(object sender, EventArgs e)
+        {
+            if (rdo_Deposit_80.Checked)
+            {
+                Deposit_Amount = 80;
+            }
+        }
+
+        private void rdo_Deposit_100_CheckedChanged(object sender, EventArgs e)
+        {
+            if (rdo_Deposit_100.Checked)
+            {
+                Deposit_Amount = 100;
+            }
+        }
+
+        private void rdo_Deposit_200_CheckedChanged(object sender, EventArgs e)
+        {
+            if (rdo_Deposit_200.Checked)
+            {
+                Deposit_Amount = 200;
+            }
+        }
+
+        private void rdo_Deposit_300_CheckedChanged(object sender, EventArgs e)
+        {
+            if (rdo_Deposit_300.Checked)
+            {
+                Deposit_Amount = 300;
+            }
         }
     }
 }

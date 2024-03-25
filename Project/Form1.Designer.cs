@@ -38,11 +38,18 @@
             btnQuit = new Button();
             LblCustName = new Label();
             txtCustomerName = new TextBox();
-            groupBox1 = new GroupBox();
-            radioButton1 = new RadioButton();
-            radioButton2 = new RadioButton();
-            radioButton3 = new RadioButton();
-            groupBox1.SuspendLayout();
+            Gbx_Bank_Tax = new GroupBox();
+            rdoBankTaxForeign = new RadioButton();
+            rdoBankTaxHome = new RadioButton();
+            Gbx_Quick_Deposit = new GroupBox();
+            rdo_Deposit_300 = new RadioButton();
+            rdo_Deposit_200 = new RadioButton();
+            rdo_Deposit_100 = new RadioButton();
+            rdo_Deposit_80 = new RadioButton();
+            rdo_Deposit_40 = new RadioButton();
+            rdo_Custom_Deposit = new RadioButton();
+            Gbx_Bank_Tax.SuspendLayout();
+            Gbx_Quick_Deposit.SuspendLayout();
             SuspendLayout();
             // 
             // LblDeposit
@@ -139,57 +146,135 @@
             txtCustomerName.Enter += txtCustomerName_Enter;
             txtCustomerName.Leave += txtCustomerName_Leave;
             // 
-            // groupBox1
+            // Gbx_Bank_Tax
             // 
-            groupBox1.Controls.Add(radioButton3);
-            groupBox1.Controls.Add(radioButton2);
-            groupBox1.Controls.Add(radioButton1);
-            groupBox1.Location = new Point(357, 29);
-            groupBox1.Name = "groupBox1";
-            groupBox1.Size = new Size(436, 157);
-            groupBox1.TabIndex = 10;
-            groupBox1.TabStop = false;
-            groupBox1.Text = "groupBox1";
+            Gbx_Bank_Tax.Controls.Add(rdoBankTaxForeign);
+            Gbx_Bank_Tax.Controls.Add(rdoBankTaxHome);
+            Gbx_Bank_Tax.Location = new Point(357, 29);
+            Gbx_Bank_Tax.Name = "Gbx_Bank_Tax";
+            Gbx_Bank_Tax.Size = new Size(436, 40);
+            Gbx_Bank_Tax.TabIndex = 10;
+            Gbx_Bank_Tax.TabStop = false;
+            Gbx_Bank_Tax.Text = "Bank Tax";
             // 
-            // radioButton1
+            // rdoBankTaxForeign
             // 
-            radioButton1.AutoSize = true;
-            radioButton1.Location = new Point(3, 19);
-            radioButton1.Name = "radioButton1";
-            radioButton1.Size = new Size(94, 19);
-            radioButton1.TabIndex = 0;
-            radioButton1.TabStop = true;
-            radioButton1.Text = "radioButton1";
-            radioButton1.UseVisualStyleBackColor = true;
+            rdoBankTaxForeign.AutoSize = true;
+            rdoBankTaxForeign.Location = new Point(173, 19);
+            rdoBankTaxForeign.Name = "rdoBankTaxForeign";
+            rdoBankTaxForeign.Size = new Size(134, 19);
+            rdoBankTaxForeign.TabIndex = 1;
+            rdoBankTaxForeign.TabStop = true;
+            rdoBankTaxForeign.Text = "Foreign Bank/ $3 Tax";
+            rdoBankTaxForeign.UseVisualStyleBackColor = true;
+            rdoBankTaxForeign.CheckedChanged += rdoBankTaxForeign_CheckedChanged;
             // 
-            // radioButton2
+            // rdoBankTaxHome
             // 
-            radioButton2.AutoSize = true;
-            radioButton2.Location = new Point(173, 19);
-            radioButton2.Name = "radioButton2";
-            radioButton2.Size = new Size(94, 19);
-            radioButton2.TabIndex = 1;
-            radioButton2.TabStop = true;
-            radioButton2.Text = "radioButton2";
-            radioButton2.UseVisualStyleBackColor = true;
+            rdoBankTaxHome.AutoSize = true;
+            rdoBankTaxHome.Location = new Point(3, 19);
+            rdoBankTaxHome.Name = "rdoBankTaxHome";
+            rdoBankTaxHome.Size = new Size(134, 19);
+            rdoBankTaxHome.TabIndex = 0;
+            rdoBankTaxHome.TabStop = true;
+            rdoBankTaxHome.Text = "Home Bank / No Tax";
+            rdoBankTaxHome.UseVisualStyleBackColor = true;
+            rdoBankTaxHome.CheckedChanged += rdoBankTaxHome_CheckedChanged;
             // 
-            // radioButton3
+            // Gbx_Quick_Deposit
             // 
-            radioButton3.AutoSize = true;
-            radioButton3.Location = new Point(337, 19);
-            radioButton3.Name = "radioButton3";
-            radioButton3.Size = new Size(94, 19);
-            radioButton3.TabIndex = 2;
-            radioButton3.TabStop = true;
-            radioButton3.Text = "radioButton3";
-            radioButton3.UseVisualStyleBackColor = true;
+            Gbx_Quick_Deposit.Controls.Add(rdo_Deposit_300);
+            Gbx_Quick_Deposit.Controls.Add(rdo_Deposit_200);
+            Gbx_Quick_Deposit.Controls.Add(rdo_Deposit_100);
+            Gbx_Quick_Deposit.Controls.Add(rdo_Deposit_80);
+            Gbx_Quick_Deposit.Controls.Add(rdo_Deposit_40);
+            Gbx_Quick_Deposit.Controls.Add(rdo_Custom_Deposit);
+            Gbx_Quick_Deposit.Location = new Point(351, 76);
+            Gbx_Quick_Deposit.Name = "Gbx_Quick_Deposit";
+            Gbx_Quick_Deposit.Size = new Size(444, 44);
+            Gbx_Quick_Deposit.TabIndex = 11;
+            Gbx_Quick_Deposit.TabStop = false;
+            Gbx_Quick_Deposit.Text = "Quick Deposit ";
+            // 
+            // rdo_Deposit_300
+            // 
+            rdo_Deposit_300.AutoSize = true;
+            rdo_Deposit_300.Location = new Point(378, 19);
+            rdo_Deposit_300.Name = "rdo_Deposit_300";
+            rdo_Deposit_300.Size = new Size(49, 19);
+            rdo_Deposit_300.TabIndex = 5;
+            rdo_Deposit_300.TabStop = true;
+            rdo_Deposit_300.Text = "$300";
+            rdo_Deposit_300.UseVisualStyleBackColor = true;
+            rdo_Deposit_300.CheckedChanged += rdo_Deposit_300_CheckedChanged;
+            // 
+            // rdo_Deposit_200
+            // 
+            rdo_Deposit_200.AutoSize = true;
+            rdo_Deposit_200.Location = new Point(323, 19);
+            rdo_Deposit_200.Name = "rdo_Deposit_200";
+            rdo_Deposit_200.Size = new Size(49, 19);
+            rdo_Deposit_200.TabIndex = 4;
+            rdo_Deposit_200.TabStop = true;
+            rdo_Deposit_200.Text = "$200";
+            rdo_Deposit_200.UseVisualStyleBackColor = true;
+            rdo_Deposit_200.CheckedChanged += rdo_Deposit_200_CheckedChanged;
+            // 
+            // rdo_Deposit_100
+            // 
+            rdo_Deposit_100.AutoSize = true;
+            rdo_Deposit_100.Location = new Point(268, 19);
+            rdo_Deposit_100.Name = "rdo_Deposit_100";
+            rdo_Deposit_100.Size = new Size(49, 19);
+            rdo_Deposit_100.TabIndex = 3;
+            rdo_Deposit_100.TabStop = true;
+            rdo_Deposit_100.Text = "$100";
+            rdo_Deposit_100.UseVisualStyleBackColor = true;
+            rdo_Deposit_100.CheckedChanged += rdo_Deposit_100_CheckedChanged;
+            // 
+            // rdo_Deposit_80
+            // 
+            rdo_Deposit_80.AutoSize = true;
+            rdo_Deposit_80.Location = new Point(219, 19);
+            rdo_Deposit_80.Name = "rdo_Deposit_80";
+            rdo_Deposit_80.Size = new Size(43, 19);
+            rdo_Deposit_80.TabIndex = 2;
+            rdo_Deposit_80.TabStop = true;
+            rdo_Deposit_80.Text = "$80";
+            rdo_Deposit_80.UseVisualStyleBackColor = true;
+            rdo_Deposit_80.CheckedChanged += rdo_Deposit_80_CheckedChanged;
+            // 
+            // rdo_Deposit_40
+            // 
+            rdo_Deposit_40.AutoSize = true;
+            rdo_Deposit_40.Location = new Point(168, 19);
+            rdo_Deposit_40.Name = "rdo_Deposit_40";
+            rdo_Deposit_40.Size = new Size(43, 19);
+            rdo_Deposit_40.TabIndex = 1;
+            rdo_Deposit_40.TabStop = true;
+            rdo_Deposit_40.Text = "$40";
+            rdo_Deposit_40.UseVisualStyleBackColor = true;
+            rdo_Deposit_40.CheckedChanged += rdo_Deposit_40_CheckedChanged;
+            // 
+            // rdo_Custom_Deposit
+            // 
+            rdo_Custom_Deposit.AutoSize = true;
+            rdo_Custom_Deposit.Location = new Point(16, 19);
+            rdo_Custom_Deposit.Name = "rdo_Custom_Deposit";
+            rdo_Custom_Deposit.Size = new Size(110, 19);
+            rdo_Custom_Deposit.TabIndex = 0;
+            rdo_Custom_Deposit.TabStop = true;
+            rdo_Custom_Deposit.Text = "Custom Deposit";
+            rdo_Custom_Deposit.UseVisualStyleBackColor = true;
+            rdo_Custom_Deposit.CheckedChanged += rdo_Custom_Deposit_CheckedChanged;
             // 
             // DavidHar_Project_InClass
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
             ClientSize = new Size(800, 450);
-            Controls.Add(groupBox1);
+            Controls.Add(Gbx_Quick_Deposit);
+            Controls.Add(Gbx_Bank_Tax);
             Controls.Add(txtCustomerName);
             Controls.Add(LblCustName);
             Controls.Add(btnQuit);
@@ -202,8 +287,11 @@
             Controls.Add(LblDeposit);
             Name = "DavidHar_Project_InClass";
             Text = "DavidHar_Project_InClass";
-            groupBox1.ResumeLayout(false);
-            groupBox1.PerformLayout();
+            Load += DavidHar_Project_InClass_Load;
+            Gbx_Bank_Tax.ResumeLayout(false);
+            Gbx_Bank_Tax.PerformLayout();
+            Gbx_Quick_Deposit.ResumeLayout(false);
+            Gbx_Quick_Deposit.PerformLayout();
             ResumeLayout(false);
             PerformLayout();
         }
@@ -220,9 +308,15 @@
         private Button btnQuit;
         private Label LblCustName;
         private TextBox txtCustomerName;
-        private GroupBox groupBox1;
-        private RadioButton radioButton3;
-        private RadioButton radioButton2;
-        private RadioButton radioButton1;
+        private GroupBox Gbx_Bank_Tax;
+        private RadioButton rdoBankTaxForeign;
+        private RadioButton rdoBankTaxHome;
+        private GroupBox Gbx_Quick_Deposit;
+        private RadioButton rdo_Custom_Deposit;
+        private RadioButton rdo_Deposit_40;
+        private RadioButton rdo_Deposit_80;
+        private RadioButton rdo_Deposit_100;
+        private RadioButton rdo_Deposit_300;
+        private RadioButton rdo_Deposit_200;
     }
 }
